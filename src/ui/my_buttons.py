@@ -16,8 +16,8 @@ class Button:
                  height: int,               # Высота кнопки
                  pos: tuple,                # Координаты кнопки
                  gui_font,                  # Шрифт, используемый в тексте на кнопке
-                 elevation,                 # Высота кнопки
-                 top_color='#c07c00',       # Цвет верхней поверхности кнопки
+                 elevation: int,            # Высота кнопки
+                 top_color ='#c07c00',       # Цвет верхней поверхности кнопки
                  bottom_color='#c07c00',    # Цвет нижней поверхности кнопки
                  hover_color='#c07c00',     # Цвет кнопки при наведении мыши
                  font_color='#ffffff',      # Цвет текста на кнопке
@@ -71,7 +71,7 @@ class Button:
         if self.middle_rect.collidepoint(mouse_pos):
             self.top_color = self.hover_color
             if pygame.mouse.get_pressed()[0]:  # ЛКМ
-                self.dynamic_elevation = 0  # Опускам кнопку при нажатии
+                self.dynamic_elevation = 0  # Опускаем кнопку при нажатии
                 self.pressed = True
             else:
                 self.dynamic_elevation = self.elevation
@@ -83,3 +83,6 @@ class Button:
             self.dynamic_elevation = self.elevation
             self.pressed = False
             self.top_color = self.prev_top_color
+
+if __name__ == '__main__':
+    pass
